@@ -1,0 +1,60 @@
+{
+  "name": "keyboard-only-outlines",
+  "version": "0.0.0",
+  "description": "Disable outlines displayed when using navigation methods other than keyboard navigation (e.g.: tab).",
+  "keywords": [
+    "outline",
+    "focus",
+    "tab",
+    "click",
+    "keyboard"
+  ],
+  "author": "João Mota <joaomssmota@gmail.com>",
+  "homepage": "https://github.com/moxystudio/js-keyboard-only-outlines#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moxystudio/js-keyboard-only-outlines.git"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --coverage",
+    "prerelease": "npm t && npm run lint",
+    "release": "standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "posttag": "git push --follow-tags origin master && npm publish"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --ignore-pattern test/fixtures",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.0",
+    "babel-preset-moxy": "^2.3.5",
+    "eslint": "^5.3.0",
+    "eslint-config-moxy": "^6.0.1",
+    "husky": "^1.0.0",
+    "jest": "^23.4.1",
+    "jest-serializer-path": "^0.1.15",
+    "lint-staged": "^7.2.0",
+    "standard-version": "^4.4.0"
+  }
+}

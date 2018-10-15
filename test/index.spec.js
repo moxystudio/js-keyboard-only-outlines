@@ -1,0 +1,72 @@
+import keyboardOnlyOutlines from '../';
+
+describe('keyboard.only-outlines', () => {
+    let dispose;
+
+    afterEach(() => {
+        dispose();
+    });
+
+    it('should add a style node to the document\'s head', () => {
+        dispose = keyboardOnlyOutlines();
+
+        document.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
+
+        expect(document.querySelector('style')).toBe(null);
+
+        document.dispatchEvent(new MouseEvent('mousedown'));
+        document.dispatchEvent(new FocusEvent('focusin'));
+
+        expect(document.querySelector('style')).toBeTruthy();
+        expect(document.querySelector('style').parentNode).toBe(document.head);
+        expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
+    });
+
+    it('should add a style node to the specified element', () => {
+        dispose = keyboardOnlyOutlines({
+            stylesheetTarget: document.body,
+        });
+
+        document.dispatchEvent(new MouseEvent('mousedown'));
+        document.dispatchEvent(new FocusEvent('focusin'));
+
+        expect(document.querySelector('style')).toBeTruthy();
+        expect(document.querySelector('style').parentNode).toBe(document.body);
+        expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
+    });
+
+    it('should add a style tag with the speciifed rule to the document\'s head', () => {
+        dispose = keyboardOnlyOutlines({
+            styles: '*:focus {outline: 100px dotted green;}',
+        });
+
+        document.dispatchEvent(new MouseEvent('mousedown'));
+        document.dispatchEvent(new FocusEvent('focusin'));
+
+        expect(document.querySelector('style').parentNode).toBe(document.head);
+        expect(document.querySelector('style').innerText).toBe('*:focus {outline: 100px dotted green;}');
+    });
+
+    it('should remove the added stylesheet from the document\'s head', () => {
+        dispose = keyboardOnlyOutlines();
+
+        document.dispatchEvent(new MouseEvent('mousedown'));
+        document.dispatchEvent(new FocusEvent('focusin'));
+
+        expect(document.querySelector('style')).toBeTruthy();
+        expect(document.querySelector('style').parentNode).toBe(document.head);
+        expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
+
+        document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 98 }));
+        document.dispatchEvent(new FocusEvent('focusin'));
+
+        expect(document.querySelector('style')).toBeTruthy();
+        expect(document.querySelector('style').parentNode).toBe(document.head);
+        expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
+
+        document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 9 }));
+        document.dispatchEvent(new FocusEvent('focusin'));
+
+        expect(document.querySelector('style')).toBe(null);
+    });
+});
