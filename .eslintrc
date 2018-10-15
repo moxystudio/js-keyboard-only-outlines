@@ -1,0 +1,8 @@
+{
+    "root": true,
+    "extends": [
+        "eslint-config-moxy/es9",
+        "eslint-config-moxy/addons/browser",
+        "eslint-config-moxy/addons/jest"
+    ]
+}
