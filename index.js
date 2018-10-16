@@ -1,5 +1,3 @@
-'use strict';
-
 const defaultOptions = {
     styles: '*:focus  { outline: none !important; }',
     styleSheetParent: document.head,
@@ -69,4 +67,4 @@ const keyboardOnlyOutlines = (options) => {
     };
 };
 
-module.exports = keyboardOnlyOutlines;
+export default keyboardOnlyOutlines;

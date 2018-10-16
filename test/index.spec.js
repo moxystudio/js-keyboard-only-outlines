@@ -1,6 +1,4 @@
-'use strict';
-
-const keyboardOnlyOutlines = require('../');
+import keyboardOnlyOutlines from '../';
 
 describe('keyboard.only-outlines', () => {
     let dispose;
