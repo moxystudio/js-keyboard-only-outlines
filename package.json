@@ -17,6 +17,7 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "files": ["index.js"],
   "scripts": {
     "lint": "eslint .",
     "test": "jest --coverage",
