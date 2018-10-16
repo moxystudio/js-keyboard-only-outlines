@@ -1,21 +1,23 @@
 const defaultOptions = {
     styles: '*:focus  { outline: none !important; }',
-    styleSheetParent: document.head,
+    stylesheetTarget: document.head,
 };
 
-const createStylesheet = (options) => {
-    const style = document.createElement('style');
-    const targetNode = options.styleSheetParent;
+const acceptedKeys = { Tab: 9, ArrowLeft: 37, ArrowTop: 38, ArrowRight: 39, ArrowDown: 40 };
 
-    style.innerText = options.styles;
+const createStylesheet = (options) => {
+    const styleNode = document.createElement('style');
+    const targetNode = options.stylesheetTarget;
+
+    styleNode.innerText = options.styles;
 
     return {
-        update: () => {
-            targetNode.append(style);
+        apply: () => {
+            targetNode.append(styleNode);
         },
-        destroy: () => {
-            if (style.parentNode === targetNode) {
-                targetNode.removeChild(style);
+        unapply: () => {
+            if (styleNode.parentNode === targetNode) {
+                targetNode.removeChild(styleNode);
             }
         },
     };
@@ -25,9 +27,9 @@ const createListeners = (styleSheet) => {
     let outlinesEnabled = true;
 
     const handleKeydown = (ev) => {
-        const acceptedKeyCodes = [9, 37, 38, 39, 40];
+        const acceptedKeyCodes = Object.keys(acceptedKeys).map((k) => acceptedKeys[k]);
 
-        if (!outlinesEnabled && acceptedKeyCodes.includes(ev.keyCode)) {
+        if (!outlinesEnabled && Object.values(acceptedKeyCodes).includes(ev.keyCode)) {
             outlinesEnabled = true;
         }
     };
@@ -38,9 +40,9 @@ const createListeners = (styleSheet) => {
 
     const handleFocusin = () => {
         if (!outlinesEnabled) {
-            styleSheet.update();
+            styleSheet.apply();
         } else {
-            styleSheet.destroy();
+            styleSheet.unapply();
         }
     };
 
@@ -62,7 +64,7 @@ const keyboardOnlyOutlines = (options) => {
     const destroyListeners = createListeners(stylesheet);
 
     return () => {
-        stylesheet.destroy();
+        stylesheet.unapply();
         destroyListeners();
     };
 };

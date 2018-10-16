@@ -37,7 +37,7 @@ describe('keyboard.only-outlines', () => {
 
     it('should add a style node to the specified element', () => {
         dispose = keyboardOnlyOutlines({
-            styleSheetParent: document.body,
+            stylesheetTarget: document.body,
         });
 
         document.dispatchEvent(new MouseEvent('mousedown'));
