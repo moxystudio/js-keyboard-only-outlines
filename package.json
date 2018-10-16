@@ -1,5 +1,5 @@
 {
-  "name": "js-keyboard-only-outlines",
+  "name": "keyboard-only-outlines",
   "version": "0.0.0",
   "description": "Disable outlines displayed when using navigation methods other than keyboard navigation (e.g.: tab).",
   "keywords": [

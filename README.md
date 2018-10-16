@@ -1,10 +1,10 @@
-# js-keyboard-only-outlines
+# keyboard-only-outlines
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
-[npm-url]:https://npmjs.org/package/js-keyboard-only-outlines
-[downloads-image]:https://img.shields.io/npm/dm/js-keyboard-only-outlines.svg
-[npm-image]:https://img.shields.io/npm/v/js-keyboard-only-outlines.svg
+[npm-url]:https://npmjs.org/package/keyboard-only-outlines
+[downloads-image]:https://img.shields.io/npm/dm/keyboard-only-outlines.svg
+[npm-image]:https://img.shields.io/npm/v/keyboard-only-outlines.svg
 [travis-url]:https://travis-ci.org/moxystudio/js-keyboard-only-outlines
 [travis-image]:http://img.shields.io/travis/moxystudio/js-keyboard-only-outlines/master.svg
 [codecov-url]:https://codecov.io/gh/moxystudio/js-keyboard-only-outlines
@@ -20,14 +20,14 @@ Disable outlines displayed when using navigation methods other than keyboard nav
 
 ## Installation
 
-```
-$ npm install js-keyboard-only-outlines
+```sh
+$ npm install keyboard-only-outlines
 ```
 
 ## Usage
 
-```
-import keyboardOnlyOutlines from 'js-keyboard-only-outlines'
+```js
+import keyboardOnlyOutlines from 'keyboard-only-outlines'
 
 const dispose = keyboardOnlyOutlines()
 //
@@ -37,7 +37,7 @@ const dispose = keyboardOnlyOutlines()
 
 The function may also be invoked with the following options: 
 
-```
+```js
 keyboardOnlyOutlines({ styles: ..., stylesheetTarget: ... })
 ```
 
@@ -45,7 +45,7 @@ Where `styles` represents the styles to apply when a focus event is caused by mo
 
 These options have the following default values: 
 
-```
+```js
 const defaultOptions = {
     styles: "*:focus  { outline: none !important; }",
     styleSheetParent: document.head
