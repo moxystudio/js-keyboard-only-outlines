@@ -1,9 +1,9 @@
-const defaultOptions = {
+const DEFAULT_OPTIONS = {
     styles: '*:focus  { outline: none !important; }',
     stylesheetTarget: document.head,
 };
 
-const acceptedKeys = { Tab: 9, ArrowLeft: 37, ArrowTop: 38, ArrowRight: 39, ArrowDown: 40 };
+const ACCEPTED_KEYS = { Tab: 9, ArrowLeft: 37, ArrowTop: 38, ArrowRight: 39, ArrowDown: 40 };
 
 const createStylesheet = (options) => {
     const styleNode = document.createElement('style');
@@ -27,7 +27,7 @@ const createListeners = (styleSheet) => {
     let outlinesEnabled = true;
 
     const handleKeydown = (ev) => {
-        const acceptedKeyCodes = Object.keys(acceptedKeys).map((k) => acceptedKeys[k]);
+        const acceptedKeyCodes = Object.keys(ACCEPTED_KEYS).map((k) => ACCEPTED_KEYS[k]);
 
         if (!outlinesEnabled && acceptedKeyCodes.includes(ev.keyCode)) {
             outlinesEnabled = true;
@@ -58,7 +58,7 @@ const createListeners = (styleSheet) => {
 };
 
 const keyboardOnlyOutlines = (options) => {
-    options = { ...defaultOptions, ...options };
+    options = { ...DEFAULT_OPTIONS, ...options };
 
     const stylesheet = createStylesheet(options);
     const destroyListeners = createListeners(stylesheet);

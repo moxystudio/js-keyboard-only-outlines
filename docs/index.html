@@ -14,7 +14,7 @@
     <input type="radio" name="radio"/>
     <br>
     <br>
-    <button id="toggle">Toggle keyboard-only-outlines</button> <p>Current state: <span id="state">on</span></p>
+    <button id="toggle">Toggle keyboard-only-outlines</button> <p>Current stateNode: <span id="state">on</span></p>
     <br>
     <br>
     <p>Note: This demo only works on evergreen browsers</p>
@@ -23,18 +23,18 @@
 
         let tearDown = keyboardOnlyOutlines();
         let outlinesEnabled = false;
-        let state = document.querySelector("#state");
-        let toggleButton = document.querySelector("#toggle");
+        const stateNode = document.querySelector("#state");
+        const toggleButtonNode = document.querySelector("#toggle");
 
-        toggleButton.addEventListener("click",  () => {
+        toggleButtonNode.addEventListener("click",  () => {
             outlinesEnabled = !outlinesEnabled;
 
             if (outlinesEnabled) {
                 tearDown();
-                state.innerText = "off";
+                stateNode.innerText = "off";
             } else {
                 tearDown = keyboardOnlyOutlines();
-                state.innerText = "on";
+                stateNode.innerText = "on";
             }
         })
     </script>
