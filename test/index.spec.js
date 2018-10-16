@@ -7,7 +7,7 @@ describe('keyboard.only-outlines', () => {
         dispose();
     });
 
-    it("should add a style node to the document's head", () => {
+    it('should add a style node to the document\'s head', () => {
         dispose = keyboardOnlyOutlines();
 
         document.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
@@ -35,7 +35,7 @@ describe('keyboard.only-outlines', () => {
         expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
     });
 
-    it("should add a style tag with the speciifed rule to the document's head", () => {
+    it('should add a style tag with the speciifed rule to the document\'s head', () => {
         dispose = keyboardOnlyOutlines({
             styles: '*:focus {outline: 100px dotted green;}',
         });
@@ -47,7 +47,7 @@ describe('keyboard.only-outlines', () => {
         expect(document.querySelector('style').innerText).toBe('*:focus {outline: 100px dotted green;}');
     });
 
-    it("should remove the added stylesheet from the document's head", () => {
+    it('should remove the added stylesheet from the document\'s head', () => {
         dispose = keyboardOnlyOutlines();
 
         document.dispatchEvent(new MouseEvent('mousedown'));
