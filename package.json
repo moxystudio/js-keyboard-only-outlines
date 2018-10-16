@@ -1,5 +1,5 @@
 {
-  "name": "keyboard-only-outlines",
+  "name": "js-keyboard-only-outlines",
   "version": "0.0.0",
   "description": "Disable outlines caused by navigation methods other than tab-navigation",
   "keywords": [
@@ -10,10 +10,10 @@
     "keyboard"
   ],
   "author": "João Mota <joaomssmota@gmail.com>",
-  "homepage": "https://github.com/moxystudio/keyboard-only-outlines#readme",
+  "homepage": "https://github.com/moxystudio/js-keyboard-only-outlines#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moxystudio/keyboard-only-outlines.git"
+    "url": "git+https://github.com/moxystudio/js-keyboard-only-outlines.git"
   },
   "license": "MIT",
   "main": "index.js",
