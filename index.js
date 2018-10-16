@@ -29,7 +29,7 @@ const createListeners = (styleSheet) => {
     const handleKeydown = (ev) => {
         const acceptedKeyCodes = Object.keys(acceptedKeys).map((k) => acceptedKeys[k]);
 
-        if (!outlinesEnabled && Object.values(acceptedKeyCodes).includes(ev.keyCode)) {
+        if (!outlinesEnabled && acceptedKeyCodes.includes(ev.keyCode)) {
             outlinesEnabled = true;
         }
     };

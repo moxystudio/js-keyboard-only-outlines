@@ -14,7 +14,10 @@
     <input type="radio" name="radio"/>
     <br>
     <br>
-    <button id="toggle">Toggle keyboard-only-outlines</button> <p id="state"> Current state: on</p>
+    <button id="toggle">Toggle keyboard-only-outlines</button> <p>Current state: <span id="state">on</span></p>
+    <br>
+    <br>
+    <p>Note: This demo only works on evergreen browsers</p>
     <script type="module">
         import keyboardOnlyOutlines from '../index.js';
 
@@ -25,13 +28,13 @@
 
         toggleButton.addEventListener("click",  () => {
             outlinesEnabled = !outlinesEnabled;
-            if(outlinesEnabled) {
+
+            if (outlinesEnabled) {
                 tearDown();
-                state.innerText = "Current state: off";
-            }
-            else {
+                state.innerText = "off";
+            } else {
                 tearDown = keyboardOnlyOutlines();
-                state.innerText = "Current state: on";
+                state.innerText = "on";
             }
         })
     </script>

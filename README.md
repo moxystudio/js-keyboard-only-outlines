@@ -24,15 +24,16 @@ Disable outlines displayed when using navigation methods other than keyboard nav
 $ npm install keyboard-only-outlines
 ```
 
+This library is written in ES9 and is using ES modules. You must compile the source code to support older browsers.
+
 ## Usage
 
 ```js
 import keyboardOnlyOutlines from 'keyboard-only-outlines'
 
 const dispose = keyboardOnlyOutlines()
-//
 // dispose will be a function which deactivates this behaviour and can be called at any time
-//
+
 ```
 
 The function may also be invoked with the following options: 
