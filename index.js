@@ -30,20 +30,20 @@ const createStylesheet = (options) => {
 };
 
 const createListeners = (styleSheet) => {
-    let outlinesEnabled = true;
+    let usingKeyboard = true;
 
     const handleKeydown = (ev) => {
-        if (!outlinesEnabled && ACCEPTED_KEYS.includes(ev.keyCode)) {
-            outlinesEnabled = true;
+        if (!usingKeyboard && ACCEPTED_KEYS.includes(ev.keyCode)) {
+            usingKeyboard = true;
         }
     };
 
     const handleMousedown = () => {
-        outlinesEnabled = false;
+        usingKeyboard = false;
     };
 
     const handleFocusin = () => {
-        if (!outlinesEnabled) {
+        if (!usingKeyboard) {
             styleSheet.apply();
         } else {
             styleSheet.unapply();
