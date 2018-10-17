@@ -18,6 +18,8 @@
 
 Disable outlines displayed when using navigation methods other than keyboard navigation (e.g.: tab).
 
+You can see it working in the [demo](https://moxystudio.github.io/js-keyboard-only-outlines/demo/) page.
+
 ## Installation
 
 ```sh
@@ -64,7 +66,3 @@ $ npm test -- --watch # during development
 ## License
 
 Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
-
-## Demo
-
-A demo is available [here](https://moxystudio.github.io/js-keyboard-only-outlines/demo/).
