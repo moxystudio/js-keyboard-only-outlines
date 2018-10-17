@@ -3,7 +3,13 @@ const DEFAULT_OPTIONS = {
     stylesheetTarget: document.head,
 };
 
-const ACCEPTED_KEYS = { Tab: 9, ArrowLeft: 37, ArrowTop: 38, ArrowRight: 39, ArrowDown: 40 };
+const ACCEPTED_KEYS = [
+    9, // Tab
+    37, // ArrowLeft
+    38, // ArrowTop
+    39, // ArrowRight
+    40, // ArrowDown
+];
 
 const createStylesheet = (options) => {
     const styleNode = document.createElement('style');
