@@ -64,3 +64,7 @@ $ npm test -- --watch # during development
 ## License
 
 Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+
+## Demo
+
+A demo is available [here](https://moxystudio.github.io/js-keyboard-only-outlines/demo/).
