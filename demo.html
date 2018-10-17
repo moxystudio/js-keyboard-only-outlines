@@ -2,23 +2,87 @@
 <head>
     <meta charset="utf-8"/>
     <title>keyboard-only-outlines demo</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50vw;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .intro-text{
+            margin-bottom: 40px;
+        }
+        .input-row{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .input-item ~ .input-item{
+            margin-left: 10px;
+        }
+
+        textarea{
+            width: 20vw;
+            max-width: 350px;
+        }
+        .note{
+            width: 100%;
+        }
+        .toggle-container{
+            display: flex;
+            align-items: center;
+        }
+        #toggle{
+            margin-right: 20px;
+        }
+    </style>
 </head>
 <body>
-    <button>A button</button>
-    <input type="text"/>
-    <input type="number"/>
-    <input type="password"/>
-    <textarea></textarea>
-    <input type="radio" name="radio"/>
-    <input type="radio" name="radio"/>
-    <input type="radio" name="radio"/>
-    <br>
-    <br>
-    <button id="toggle">Toggle keyboard-only-outlines</button> <p>Current stateNode: <span id="state">on</span></p>
-    <br>
-    <br>
-    <p>Note: This demo only works on evergreen browsers</p>
-    <script type="module">
+    <div id="container">
+        <h1>keyboard-only-outlines demo page</h1>
+        <p class="intro-text">Most browsers add an outline to input elements when a focus event occurs.
+            This feature is useful for keyboard navigation, but not as useful for mouse navigation.
+            It is also potentially interferes with a user's visual experience.
+            <br>
+            <br>
+            <a href="https://github.com/moxystudio/js-keyboard-only-outlines"><strong>keyboard-only-outlines</strong></a> tries to provide a better visual experience by
+            disabling outlines caused by mouse navigation, while leaving the ones caused by keyboard
+            navigation intact.
+        </p>
+        <div class="input-row">
+                <input class="input-item" type="text" value="Some text"/>
+                <input class="input-item" type="number" value="42"/>
+                <input class="input-item" type="password" value="hunter2"/>
+        </div>
+        <div class="input-row">
+                <button class="input-item">A button</button>
+                <textarea class="input-item">Some more text</textarea>
+                <div class="input-item">
+                    <input type="radio" name="radio"/>
+                    <input type="radio" name="radio"/>
+                    <input type="radio" name="radio"/>
+                </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="toggle-container">
+            <button id="toggle">Toggle keyboard-only-outlines</button> <p>Current state: <span id="state"><strong>on</strong></span></p>
+        </div>
+        <br>
+        <br>
+        <div class="note">
+                <p><strong>Note:</strong> This demo only works on evergreen browsers</p>
+        </div>
+
+    </div>
+        <script type="module">
         import keyboardOnlyOutlines from './index.js';
 
         let tearDown = keyboardOnlyOutlines();
