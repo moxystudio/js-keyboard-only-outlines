@@ -1,9 +1,8 @@
-
 body {
     font-family: sans-serif;
 }
 
-#container {
+.container {
     position: relative;
     width: 50vw;
     max-width: 900px;

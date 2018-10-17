@@ -21,7 +21,7 @@
     "index.js"
   ],
   "scripts": {
-    "lint": "eslint . && stylelint --ignore-path .gitignore \"**/*.css\"",
+    "lint": "eslint --ignore-path .gitignore . && stylelint --ignore-path .gitignore \"**/*.css\"",
     "test": "jest --coverage",
     "prerelease": "npm t && npm run lint",
     "release": "standard-version"
