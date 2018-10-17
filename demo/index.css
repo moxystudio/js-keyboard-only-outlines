@@ -1,0 +1,51 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 50vw;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-text ~ .intro-text {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.input-row {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input-row ~ .input-row {
+    margin-bottom: 55px;
+}
+
+.input-item ~ .input-item {
+    margin-left: 10px;
+}
+
+textarea {
+    width: 20vw;
+    max-width: 350px;
+}
+
+.note {
+    width: 100%;
+}
+
+.toggle-container {
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+}
+
+#toggle {
+    margin-right: 20px;
+}

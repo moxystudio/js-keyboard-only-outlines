@@ -17,8 +17,11 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint --ignore-path .gitignore . && stylelint --ignore-path .gitignore \"**/*.css\"",
     "test": "jest --coverage",
     "prerelease": "npm t && npm run lint",
     "release": "standard-version"
@@ -38,6 +41,10 @@
     "*.js": [
       "eslint --fix --ignore-pattern test/fixtures",
       "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
     ]
   },
   "commitlint": {
@@ -55,6 +62,8 @@
     "jest": "^23.4.1",
     "jest-serializer-path": "^0.1.15",
     "lint-staged": "^7.2.0",
-    "standard-version": "^4.4.0"
+    "standard-version": "^4.4.0",
+    "stylelint": "^9.6.0",
+    "stylelint-config-moxy": "^5.0.0"
   }
 }

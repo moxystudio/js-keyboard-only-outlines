@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <title>keyboard-only-outlines demo</title>
+    <link rel="stylesheet" href="index.css"/>
+    <script src="index.js" type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>keyboard-only-outlines demo page</h1>
+        <p class="intro-text">Most browsers add an outline to input elements when a focus event occurs.
+            This feature is useful for keyboard navigation, but not as useful for mouse navigation.
+            It is also potentially interferes with a user's visual experience.
+        </p>
+        <p class="intro-text">
+            <a href="https://github.com/moxystudio/js-keyboard-only-outlines"><strong>keyboard-only-outlines</strong></a> tries to provide a better visual experience by
+            disabling outlines caused by mouse navigation, while leaving the ones caused by keyboard
+            navigation intact.
+        </p>
+        <div class="input-row">
+            <input class="input-item" type="text" value="Some text"/>
+            <input class="input-item" type="number" value="42"/>
+            <input class="input-item" type="password" value="hunter2"/>
+        </div>
+        <div class="input-row">
+            <button class="input-item">A button</button>
+            <textarea class="input-item">Some more text</textarea>
+            <div class="input-item">
+                <input type="radio" name="radio"/>
+                <input type="radio" name="radio"/>
+                <input type="radio" name="radio"/>
+            </div>
+        </div>
+        <div class="toggle-container">
+            <button id="toggle">Toggle keyboard-only-outlines</button> <p>Current state: <span id="state"><strong>on</strong></span></p>
+        </div>
+        <div class="note">
+            <p><strong>Note:</strong> This demo only works on evergreen browsers</p>
+        </div>
+    </div>
+</body>
