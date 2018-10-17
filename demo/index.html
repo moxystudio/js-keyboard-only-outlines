@@ -2,53 +2,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>keyboard-only-outlines demo</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-        #container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 50vw;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .intro-text ~ .intro-text{
-            margin-bottom: 40px;
-            margin-top: 0;
-        }
-        .input-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .input-row ~ .input-row{
-            margin-bottom: 55px;
-        }
-
-        .input-item ~ .input-item {
-            margin-left: 10px;
-        }
-
-        textarea {
-            width: 20vw;
-            max-width: 350px;
-        }
-        .note {
-            width: 100%;
-        }
-        .toggle-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 35px;
-        }
-        #toggle {
-            margin-right: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css"/>
+    <script src="index.js" type="module"></script>
 </head>
 <body>
     <div id="container">
@@ -83,24 +38,4 @@
             <p><strong>Note:</strong> This demo only works on evergreen browsers</p>
         </div>
     </div>
-        <script type="module">
-        import keyboardOnlyOutlines from './index.js';
-
-        let tearDown = keyboardOnlyOutlines();
-        let outlinesEnabled = false;
-        const stateNode = document.querySelector('#state');
-        const toggleButtonNode = document.querySelector('#toggle');
-
-        toggleButtonNode.addEventListener('click',  () => {
-            outlinesEnabled = !outlinesEnabled;
-
-            if (outlinesEnabled) {
-                tearDown();
-                stateNode.innerText = 'off';
-            } else {
-                tearDown = keyboardOnlyOutlines();
-                stateNode.innerText = 'on';
-            }
-        });
-    </script>
 </body>
