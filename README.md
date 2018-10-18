@@ -20,7 +20,7 @@ Disable outlines displayed when using navigation methods other than keyboard nav
 
 By default, some browsers, such as Firefox and Edge, set input borders on focus according to the host Operating System theme. 
 This package does not disable borders, as it may interfere with the user's own styles.
-This is only apparent when user's don't explicitly define a border for their inputs.
+This is only apparent when users don't explicitly define a border for their inputs.
 
 You can see it working in the [demo](https://moxystudio.github.io/js-keyboard-only-outlines/demo/) page.
 
