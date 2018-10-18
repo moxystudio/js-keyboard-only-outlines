@@ -27,6 +27,10 @@ body {
     margin-bottom: 55px;
 }
 
+.input-item {
+    border: 1px solid gray;
+}
+
 .input-item ~ .input-item {
     margin-left: 10px;
 }
