@@ -28,6 +28,8 @@ $ npm install keyboard-only-outlines
 
 This library is written in ES9 and is using ES modules. You must compile the source code to support older browsers.
 
+More specifically, we are using arrow functions, object spread and Array#includes which might not be available in all browsers. If you are using a bundler, such as Webpack, compiling it through Babel should suffice.
+
 ## Usage
 
 ```js
