@@ -25,7 +25,7 @@
         <div class="input-row">
             <button class="input-item">A button</button>
             <textarea class="input-item">Some more text</textarea>
-            <div class="input-item">
+            <div class="input-item" style="border: none;">
                 <input type="radio" name="radio"/>
                 <input type="radio" name="radio"/>
                 <input type="radio" name="radio"/>
@@ -35,7 +35,17 @@
             <button id="toggle">Toggle keyboard-only-outlines</button> <p>Current state: <span id="state"><strong>on</strong></span></p>
         </div>
         <div class="note">
-            <p><strong>Note:</strong> This demo only works on evergreen browsers</p>
+            <strong>Notes:</strong>
+            <ul>
+                <li><p>This demo only works on evergreen browsers</p></li>
+                <li>
+                    <p>
+                        By default, some browsers, such as Firefox and Edge, set input borders on focus according to the host Operating System theme.
+                        This package does not disable borders, as it may interfere with the user's own styles.
+                        This is only apparent when user's don't explicitly define a border for their inputs.
+                    </p>
+                </li>
+            </ul>
         </div>
     </div>
 </body>
