@@ -18,6 +18,9 @@
 
 Disable outlines displayed when using navigation methods other than keyboard navigation (e.g.: tab).
 
+Please note that some browsers set other styles, such as borders instead of outlines. This package does not disable borders, as it may interfere with the user's own styles.
+It does, however, also remove the border from the -moz-inner-focus pseudo-element.
+
 You can see it working in the [demo](https://moxystudio.github.io/js-keyboard-only-outlines/demo/) page.
 
 ## Installation
