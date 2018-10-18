@@ -5,6 +5,7 @@ body {
 .container {
     position: relative;
     width: 50vw;
+    min-width: 400px;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
@@ -20,11 +21,16 @@ body {
 .input-row {
     margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .input-row ~ .input-row {
     margin-bottom: 55px;
+}
+
+.input-item {
+    margin-top: 10px;
 }
 
 .input-item ~ .input-item {
