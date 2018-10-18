@@ -2,6 +2,13 @@ import keyboardOnlyOutlines from '../';
 
 describe('keyboard.only-outlines', () => {
     let dispose;
+    const defaultStyles = `
+*:focus {
+    outline: none !important;
+}
+*::-moz-focus-inner {
+    border: none !important;
+}`;
 
     afterEach(() => {
         dispose();
@@ -19,7 +26,7 @@ describe('keyboard.only-outlines', () => {
 
         expect(document.querySelector('style')).toBeTruthy();
         expect(document.querySelector('style').parentNode).toBe(document.head);
-        expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
+        expect(document.querySelector('style').innerText).toBe(defaultStyles);
     });
 
     it('should add a style node to the specified element', () => {
@@ -32,7 +39,7 @@ describe('keyboard.only-outlines', () => {
 
         expect(document.querySelector('style')).toBeTruthy();
         expect(document.querySelector('style').parentNode).toBe(document.body);
-        expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
+        expect(document.querySelector('style').innerText).toBe(defaultStyles);
     });
 
     it('should add a style tag with the speciifed rule to the document\'s head', () => {
@@ -55,14 +62,14 @@ describe('keyboard.only-outlines', () => {
 
         expect(document.querySelector('style')).toBeTruthy();
         expect(document.querySelector('style').parentNode).toBe(document.head);
-        expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
+        expect(document.querySelector('style').innerText).toBe(defaultStyles);
 
         document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 98 }));
         document.dispatchEvent(new FocusEvent('focusin'));
 
         expect(document.querySelector('style')).toBeTruthy();
         expect(document.querySelector('style').parentNode).toBe(document.head);
-        expect(document.querySelector('style').innerText).toBe('*:focus  { outline: none !important; }');
+        expect(document.querySelector('style').innerText).toBe(defaultStyles);
 
         document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 9 }));
         document.dispatchEvent(new FocusEvent('focusin'));

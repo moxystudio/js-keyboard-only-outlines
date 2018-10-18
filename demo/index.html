@@ -38,7 +38,13 @@
             <strong>Notes:</strong>
             <ul>
                 <li><p>This demo only works on evergreen browsers</p></li>
-                <li><p> Some browsers set styles other than the outline (e.g borders) on focus events. This package does not disable those, as it would interfere with the user's own styles. We have, however, set the inputs' borders explicitly in this demo.</p></li>
+                <li>
+                    <p>
+                        By default, some browsers, such as Firefox and Edge, set input borders on focus according to the host Operating System theme.
+                        This package does not disable borders, as it may interfere with the user's own styles.
+                        This is only apparent when user's don't explicitly define a border for their inputs.
+                    </p>
+                </li>
             </ul>
         </div>
     </div>

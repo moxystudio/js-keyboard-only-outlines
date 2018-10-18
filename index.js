@@ -1,5 +1,11 @@
 const DEFAULT_OPTIONS = {
-    styles: '*:focus { outline: none !important;} *::-moz-focus-inner {border: none !important;}',
+    styles: `
+*:focus {
+    outline: none !important;
+}
+*::-moz-focus-inner {
+    border: none !important;
+}`,
     stylesheetTarget: document.head,
 };
 

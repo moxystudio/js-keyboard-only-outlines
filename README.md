@@ -18,8 +18,9 @@
 
 Disable outlines displayed when using navigation methods other than keyboard navigation (e.g.: tab).
 
-Please note that some browsers set other styles, such as borders instead of outlines. This package does not disable borders, as it may interfere with the user's own styles.
-It does, however, also remove the border from the -moz-inner-focus pseudo-element.
+By default, some browsers, such as Firefox and Edge, set input borders on focus according to the host Operating System theme. 
+This package does not disable borders, as it may interfere with the user's own styles.
+This is only apparent when user's don't explicitly define a border for their inputs.
 
 You can see it working in the [demo](https://moxystudio.github.io/js-keyboard-only-outlines/demo/) page.
 
@@ -53,9 +54,15 @@ These options have the following default values:
 
 ```js
 const defaultOptions = {
-    styles: "*:focus  { outline: none !important; }",
-    styleSheetParent: document.head
+    styles: `
+*:focus {
+    outline: none !important;
 }
+*::-moz-focus-inner {
+    border: none !important;
+}`,
+    stylesheetTarget: document.head,
+};
 ```
 
 ## Tests
