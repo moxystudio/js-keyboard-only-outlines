@@ -5,6 +5,7 @@ body {
 .container {
     position: relative;
     width: 50vw;
+    min-width: 400px;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
@@ -20,6 +21,8 @@ body {
 .input-row {
     margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 }
 
@@ -28,11 +31,8 @@ body {
 }
 
 .input-item {
+    margin: 10px 10px 0 0;
     border: 1px solid gray;
-}
-
-.input-item ~ .input-item {
-    margin-left: 10px;
 }
 
 textarea {
