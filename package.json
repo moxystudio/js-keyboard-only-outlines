@@ -1,6 +1,6 @@
 {
   "name": "keyboard-only-outlines",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Disable outlines displayed when using navigation methods other than keyboard navigation (e.g.: tab).",
   "keywords": [
     "outline",
