@@ -16,11 +16,12 @@
 
 Disable outlines displayed when using navigation methods other than keyboard navigation (e.g.: tab).
 
-By default, some browsers, such as Firefox and Edge, set input borders on focus according to the host Operating System theme. 
+By default, some browsers, such as Firefox and Edge, set input borders on focus according to the host Operating System theme.
 This package does not disable borders, as it may interfere with the user's own styles.
 This is only apparent when users don't explicitly define a border for their inputs.
 
 You can see it working in the [demo](https://moxystudio.github.io/js-keyboard-only-outlines/demo/) page.
+
 
 ## Installation
 
@@ -28,9 +29,8 @@ You can see it working in the [demo](https://moxystudio.github.io/js-keyboard-on
 $ npm install keyboard-only-outlines
 ```
 
-This library is written in ES9 and is using ES modules. You must compile the source code to support older browsers.
+This library is written in modern JavaScript and is published in both CommonJS and ES module transpiled variants. If you target older browsers please make sure to transpile accordingly.
 
-More specifically, we are using arrow functions, object spread and Array#includes which might not be available in all browsers. If you are using a bundler, such as Webpack, compiling it through Babel should suffice.
 
 ## Usage
 
@@ -42,7 +42,7 @@ const dispose = keyboardOnlyOutlines()
 
 ```
 
-The function may also be invoked with the following options: 
+The function may also be invoked with the following options:
 
 ```js
 keyboardOnlyOutlines({ styles: ..., stylesheetTarget: ... })
@@ -50,7 +50,7 @@ keyboardOnlyOutlines({ styles: ..., stylesheetTarget: ... })
 
 Where `styles` represents the styles to apply when a focus event is caused by mouse navigation, and `stylesheetTarget` is the node which will receive the aforementioned style. The latter option is particularly useful when dealing with ShadowDOMs.
 
-These options have the following default values: 
+These options have the following default values:
 
 ```js
 const defaultOptions = {
@@ -64,6 +64,7 @@ const defaultOptions = {
     stylesheetTarget: document.head,
 };
 ```
+
 
 ## Tests
 

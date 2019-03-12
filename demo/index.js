@@ -1,4 +1,4 @@
-import keyboardOnlyOutlines from '../index.js';
+import keyboardOnlyOutlines from '../src/index.js';
 
 let tearDown = keyboardOnlyOutlines();
 let outlinesEnabled = false;

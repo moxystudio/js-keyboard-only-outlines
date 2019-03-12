@@ -1,4 +1,4 @@
-import keyboardOnlyOutlines from '../';
+import keyboardOnlyOutlines from '../src';
 
 describe('keyboard.only-outlines', () => {
     let dispose;
