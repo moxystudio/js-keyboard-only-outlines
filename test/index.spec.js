@@ -17,8 +17,6 @@ describe('keyboard.only-outlines', () => {
     it('should add a style node to the document\'s head', () => {
         dispose = keyboardOnlyOutlines();
 
-        document.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
-
         expect(document.querySelector('style')).toBe(null);
 
         document.dispatchEvent(new MouseEvent('mousedown'));
@@ -75,5 +73,19 @@ describe('keyboard.only-outlines', () => {
         document.dispatchEvent(new FocusEvent('focusin'));
 
         expect(document.querySelector('style')).toBe(null);
+    });
+
+    it('should add a style node to the document\'s head if there\'s an active element', () => {
+        const div = document.createElement('div');
+
+        div.setAttribute('tabIndex', 1);
+        div.focus();
+        document.body.appendChild(div);
+
+        dispose = keyboardOnlyOutlines();
+
+        expect(document.querySelector('style')).toBeTruthy();
+        expect(document.querySelector('style').parentNode).toBe(document.head);
+        expect(document.querySelector('style').innerText).toBe(defaultStyles);
     });
 });

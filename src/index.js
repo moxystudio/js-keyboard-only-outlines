@@ -36,7 +36,7 @@ const createStylesheet = (options) => {
 };
 
 const createListeners = (styleSheet) => {
-    let usingKeyboard = true;
+    let usingKeyboard = false;
 
     const handleKeydown = (ev) => {
         if (!usingKeyboard && ACCEPTED_KEYS.includes(ev.keyCode)) {
@@ -59,6 +59,13 @@ const createListeners = (styleSheet) => {
     document.addEventListener('keydown', handleKeydown);
     document.addEventListener('mousedown', handleMousedown);
     document.addEventListener('focusin', handleFocusin);
+
+    // Trigger the focus handler if there's a focused element
+    if (document.activeElement &&
+        document.activeElement.tagName !== 'BODY' &&
+        document.activeElement.tagName !== 'HTML') {
+        handleFocusin();
+    }
 
     return () => {
         document.removeEventListener('keydown', handleKeydown);
