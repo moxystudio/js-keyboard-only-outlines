@@ -1,6 +1,15 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.0.3](https://github.com/moxystudio/js-keyboard-only-outlines/compare/v1.0.2...v1.0.3) (2019-05-21)
+
+
+### Bug Fixes
+
+* inject styles if there's an active element when initialized ([dafc73e](https://github.com/moxystudio/js-keyboard-only-outlines/commit/dafc73e))
+
+
 
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/moxystudio/js-keyboard-only-outlines/compare/v1.0.1...v1.0.2) (2019-03-12)
