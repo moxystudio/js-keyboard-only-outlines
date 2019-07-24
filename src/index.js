@@ -6,7 +6,7 @@ const DEFAULT_OPTIONS = {
 *::-moz-focus-inner {
     border: none !important;
 }`,
-    stylesheetTarget: document.head,
+    stylesheetTarget: typeof document !== 'undefined' && document.head,
 };
 
 const ACCEPTED_KEYS = [
