@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/moxystudio/js-keyboard-only-outlines/compare/v1.0.3...v1.0.4) (2019-07-24)
+
+
+### Bug Fixes
+
+* add ssr compatibility ([#16](https://github.com/moxystudio/js-keyboard-only-outlines/issues/16)) ([35175b8](https://github.com/moxystudio/js-keyboard-only-outlines/commit/35175b8))
+
+
+
 ### [1.0.3](https://github.com/moxystudio/js-keyboard-only-outlines/compare/v1.0.2...v1.0.3) (2019-05-21)
 
 
