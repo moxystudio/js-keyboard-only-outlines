@@ -26,8 +26,8 @@
     "build:commonjs": "BABEL_ENV=commonjs babel src -d lib",
     "build:es": "BABEL_ENV=es babel src -d es",
     "build": "npm run build:commonjs && npm run build:es",
-    "lint": "eslint --ignore-path .gitignore . && stylelint --ignore-path .gitignore \"**/*.css\"",
-    "test": "jest --coverage",
+    "lint": "eslint --ignore-path .gitignore .",
+    "test": "jest",
     "prerelease": "npm t && npm run lint && npm run build",
     "release": "standard-version",
     "postrelease": "git push --follow-tags origin master && npm publish"
@@ -40,7 +40,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix --ignore-pattern test/fixtures",
+      "eslint --fix",
       "git add"
     ],
     "*.css": [
@@ -56,18 +56,15 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.0",
-    "babel-jest": "^24.5.0",
-    "babel-preset-moxy": "^3.0.4",
-    "eslint": "^5.3.0",
-    "eslint-config-moxy": "^7.0.1",
-    "husky": "^1.0.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@moxy/babel-preset": "^3.2.1",
+    "@moxy/eslint-config": "^9.1.2",
+    "@moxy/jest-config": "^1.1.1",
+    "eslint": "^6.7.0",
+    "husky": "^3.1.0",
     "jest": "^24.5.0",
-    "jest-serializer-path": "^0.1.15",
     "lint-staged": "^8.0.0",
-    "standard-version": "^6.0.1",
-    "stylelint": "^10.0.1",
-    "stylelint-config-moxy": "^6.1.0"
+    "standard-version": "^7.0.1"
   }
 }
