@@ -2,11 +2,11 @@
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
-[npm-url]:https://npmjs.org/package/keyboard-only-outlines
-[downloads-image]:https://img.shields.io/npm/dm/keyboard-only-outlines.svg
-[npm-image]:https://img.shields.io/npm/v/keyboard-only-outlines.svg
+[npm-url]:https://npmjs.org/package/@moxy/keyboard-only-outlines
+[downloads-image]:https://img.shields.io/npm/dm/@moxy/keyboard-only-outlines.svg
+[npm-image]:https://img.shields.io/npm/v/@moxy/keyboard-only-outlines.svg
 [travis-url]:https://travis-ci.org/moxystudio/js-keyboard-only-outlines
-[travis-image]:http://img.shields.io/travis/moxystudio/js-keyboard-only-outlines/master.svg
+[travis-image]:https://img.shields.io/travis/moxystudio/js-keyboard-only-outlines/master.svg
 [codecov-url]:https://codecov.io/gh/moxystudio/js-keyboard-only-outlines
 [codecov-image]:https://img.shields.io/codecov/c/github/moxystudio/js-keyboard-only-outlines/master.svg
 [david-dm-url]:https://david-dm.org/moxystudio/js-keyboard-only-outlines
@@ -26,7 +26,7 @@ You can see it working in the [demo](https://moxystudio.github.io/js-keyboard-on
 ## Installation
 
 ```sh
-$ npm install keyboard-only-outlines
+$ npm install @moxy/keyboard-only-outlines
 ```
 
 This library is written in modern JavaScript and is published in both CommonJS and ES module transpiled variants. If you target older browsers please make sure to transpile accordingly.
@@ -35,7 +35,7 @@ This library is written in modern JavaScript and is published in both CommonJS a
 ## Usage
 
 ```js
-import keyboardOnlyOutlines from 'keyboard-only-outlines'
+import keyboardOnlyOutlines from '@moxy/keyboard-only-outlines'
 
 const dispose = keyboardOnlyOutlines()
 // dispose will be a function which deactivates this behaviour and can be called at any time
