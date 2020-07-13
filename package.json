@@ -65,6 +65,6 @@
     "husky": "^3.1.0",
     "jest": "^24.5.0",
     "lint-staged": "^8.0.0",
-    "standard-version": "^7.0.1"
+    "standard-version": "^8.0.1"
   }
 }
